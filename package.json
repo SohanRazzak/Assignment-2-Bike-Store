@@ -1,0 +1,44 @@
+{
+  "name": "assignment-2",
+  "version": "1.0.0",
+  "description": "Assignment 2, Bike Store Backend",
+  "homepage": "https://github.com/SohanRazzak/Assignment-2-Bike-Store#readme",
+  "bugs": {
+    "url": "https://github.com/SohanRazzak/Assignment-2-Bike-Store/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SohanRazzak/Assignment-2-Bike-Store.git"
+  },
+  "license": "ISC",
+  "author": "Sohan Razzak",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/server.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "npx eslint src/**/*.ts --fix",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+    "prettier:fix": "npx prettier --write src"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.12.0",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.4.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.3"
+  }
+}
