@@ -13,10 +13,22 @@ const bikeSchema = new Schema<TBikes>({
     },
     description: { type: String, required: true },
     quantity: { type: Number, required: true, min: [0, "Quantity Can't Be Lower Than 0"] },
-    inStock: { type: Boolean, default: true }
+    inStock: { type: Boolean, default: true },
+    isDeleted: { type: Boolean, default: false, select: false },
 },
     { timestamps: true } // To keep track of createdAt and updatedAt
 )
+
+// Removing Deleted Items from response
+bikeSchema.pre("find", function (next) {
+    this.find({ isDeleted: { $ne: true } })
+    next();
+})
+bikeSchema.pre("findOne", function (next) {
+    this.findOne({ isDeleted: { $ne: true } })
+    next();
+})
+
 
 // Creating BikeModel
 export const BikeModel = model<TBikes>('bikes', bikeSchema);

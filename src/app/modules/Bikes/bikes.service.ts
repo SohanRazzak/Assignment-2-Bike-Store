@@ -19,3 +19,15 @@ export const getBikeByIdService = async (id: string) => {
     const result = await BikeModel.findOne({ _id: id });
     return result;
 }
+
+// Service for Updating single Bike
+export const updateSingleBikeService = async (id: string, data: TBikes) => {
+    const result = await BikeModel.updateOne({ _id: id }, data, { runValidators: true });
+    return result;
+}
+
+// Delete single Bike
+export const deleteSingleBikeService = async (id: string) => {
+    const result = await BikeModel.updateOne({ _id: id }, { isDeleted: true }, { runValidators: true });
+    return result;
+}

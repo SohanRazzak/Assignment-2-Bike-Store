@@ -7,4 +7,5 @@ export type TBikes = {
     description: string;
     quantity: number;
     inStock: boolean;
+    isDeleted: boolean
 }
