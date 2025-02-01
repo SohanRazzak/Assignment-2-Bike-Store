@@ -5,14 +5,14 @@ import { TBikes } from "./bikes.interface";
 const bikeSchema = new Schema<TBikes>({
     name: { type: String, required: true },
     brand: { type: String, required: true },
-    price: { type: Number, required: true },
+    price: { type: Number, required: true, min: [0, "Price must be a positive number"] },
     category: {
         type: String,
         enum: ["Mountain", "Road", "Hybrid", "Electric"],
         required: true
     },
     description: { type: String, required: true },
-    quantity: { type: Number, required: true, min: 0 },
+    quantity: { type: Number, required: true, min: [0, "Quantity Can't Be Lower Than 0"] },
     inStock: { type: Boolean, default: true }
 },
     { timestamps: true } // To keep track of createdAt and updatedAt

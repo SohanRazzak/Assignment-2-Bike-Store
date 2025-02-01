@@ -13,6 +13,7 @@ app.use(cors());
 // API Endpoints
 // Bikes Routers
 app.use('/api/products', bikeRouter)
+// Orders Routers
 
 
 // API Home Route
@@ -22,6 +23,15 @@ homeRouter.get("", (req: Request, res: Response) => {
     res.status(200).json({
         success: true,
         message: "Server is running (with local db)!"
+    })
+})
+
+
+// Custom JSON Response for 404 Endpoint
+app.all("/*", (req: Request, res: Response) => {
+    res.status(404).json({
+        success: false,
+        message: "Something Went Wrong!"
     })
 })
 

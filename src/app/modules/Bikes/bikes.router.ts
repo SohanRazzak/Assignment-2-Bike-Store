@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllBikesController, getBikeByIdController } from './bikes.controller';
+import { addNewBikeController, getAllBikesController, getBikeByIdController } from './bikes.controller';
 
 // Creating a Express Router for Bikes to maintain Endpoints Pattern
 export const bikeRouter = express.Router();
