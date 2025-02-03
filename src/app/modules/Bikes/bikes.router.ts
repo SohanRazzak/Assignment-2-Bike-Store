@@ -12,16 +12,12 @@ export const bikeRouter = express.Router();
 
 // All Methods For bikeRouter
 // Add a bike to database
-bikeRouter.post('/', addNewBikeController)
+bikeRouter.post('/', addNewBikeController);
 // Get all bikes
 bikeRouter.get('/', getAllBikesController);
 // Get bikes by id
 bikeRouter.get('/:productId', getBikeByIdController);
 // Update a Bike Document
-bikeRouter.put('/:productId', updateSingleBikeController)
+bikeRouter.put('/:productId', updateSingleBikeController);
 // Delete a Bike Document
-bikeRouter.delete('/:productId', deleteSingleBikeController)
-
-
-
-
+bikeRouter.delete('/:productId', deleteSingleBikeController);

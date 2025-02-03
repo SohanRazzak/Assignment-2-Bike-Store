@@ -14,7 +14,7 @@ const bikeSchema = new Schema<TBikes>({
     description: { type: String, required: true },
     quantity: { type: Number, required: true, min: [0, "Quantity Can't Be Lower Than 0"] },
     inStock: { type: Boolean, default: true },
-    isDeleted: { type: Boolean, default: false, select: false },
+    isDeleted: { type: Boolean, default: false, optional: true, select: false },
 },
     { timestamps: true } // To keep track of createdAt and updatedAt
 )
@@ -27,6 +27,14 @@ bikeSchema.pre("find", function (next) {
 bikeSchema.pre("findOne", function (next) {
     this.findOne({ isDeleted: { $ne: true } })
     next();
+})
+
+
+// Setting inStock to False if current quantity is 0 (On Save)
+bikeSchema.pre('save', function () {
+    if (this.quantity === 0) {
+        this.inStock = false;
+    }
 })
 
 

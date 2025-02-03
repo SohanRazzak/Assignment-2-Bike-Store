@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import { bikeRouter } from './app/modules/Bikes/bikes.router';
+import { orderRouter } from './app/modules/Orders/orders.router';
 
 // Creating Server App
 const app: Application = express();
@@ -14,6 +15,7 @@ app.use(cors());
 // Bikes Routers
 app.use('/api/products', bikeRouter)
 // Orders Routers
+app.use('/api/orders', orderRouter)
 
 
 // API Home Route
