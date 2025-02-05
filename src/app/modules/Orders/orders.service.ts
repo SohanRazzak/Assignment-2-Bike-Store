@@ -9,12 +9,12 @@ export const newOrderService = async (data: TOrder) => {
     const { product: bikeId, quantity } = data;
     const bike = await BikeModel.findById(bikeId);
     if (!bike) {
-        // Returning if no Bike matches
+        // Returning undefined if no Bike matches
         return;
     }
     if (bike.quantity < quantity) {
-        // Returns false to controller
-        return false;
+        // Returns null to controller
+        return;
     }
     bike.quantity -= quantity;
     // if (!bike.quantity) {          ||  inStock Logic handled in
