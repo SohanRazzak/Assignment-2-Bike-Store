@@ -1,12 +1,14 @@
 import { Request, Response } from "express";
 import { getTotalRevenueService, newOrderService } from "./orders.service";
+import { orderValidator } from "./orders.validator";
 
 
 // Make a new Order
 export const createOrderController = async (req: Request, res: Response) => {
     try {
         const data = req.body;
-        const result = await newOrderService(data);
+        const validData = orderValidator.parse(data);
+        const result = await newOrderService(validData);
         if (!result) {
             res.status(404).json({
                 status: false,

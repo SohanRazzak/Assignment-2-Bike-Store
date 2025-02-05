@@ -113,7 +113,7 @@ export const deleteSingleBikeController = async (req: Request, res: Response) =>
         res.status(200).json({
             status: true,
             message: "Bike Deleted Successfully!",
-            data: {}
+            data: result
         });
     } catch (error) {
         res.status(500).json({

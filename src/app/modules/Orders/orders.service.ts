@@ -39,10 +39,6 @@ export const getTotalRevenueService = async () => {
                 _id: null, // taking nonexisting field to re-group into single doc
                 totalRevenue: {
                     $sum: "$totalPrice"
-                    // $sum: {
-                    //     // According to requirment
-                    //     $multiply: ["$quantity", "$totalPrice"]
-                    // }
                 }
             }
         },
@@ -50,6 +46,29 @@ export const getTotalRevenueService = async () => {
         {
             $project: { _id: 0, totalRevenue: 1 }
         }
+
+        // According to requirement
+        /*{
+            $addFields: { productId: { $toObjectId: '$product' } }
+        },
+        {
+            $lookup: {
+                from: 'bikes',
+                localField: "productId",
+                foreignField: "_id",
+                as: "productInfo"
+            }
+        },
+        {
+            $group: {
+                _id: '',
+                totalRevenue: {
+                    $sum: {
+                        $multiply: ["$quantity", { $first: '$productInfo.price' }]
+                    }
+                }
+            }
+        } */
     ])
     return result;
 }
