@@ -48,3 +48,40 @@ Each module contains
 - `/:productId` - Available for get, put, delete method to get, update and delete single bike with matching "\_id"
 - `/orders` - Available for post method to add new order data.
 - `/orders/revenue` - Available for get method to get total revenue from orders.
+
+## Full API Endpoint Table
+
+## 🚲 Bikes API
+
+| Method | Endpoint                   | Description         |
+| ------ | -------------------------- | ------------------- |
+| POST   | `/api/products/`           | Add a new bike      |
+| GET    | `/api/products/`           | Get all bikes       |
+| GET    | `/api/products/:productId` | Get a bike by ID    |
+| PUT    | `/api/products/:productId` | Update a bike by ID |
+| DELETE | `/api/products/:productId` | Delete a bike by ID |
+
+---
+
+## 🛒 Orders API
+
+| Method | Endpoint              | Description                   |
+| ------ | --------------------- | ----------------------------- |
+| POST   | `/api/orders/`        | Create a new order            |
+| GET    | `/api/orders/revenue` | Get total revenue calculation |
+
+---
+
+## 🏠 Home API
+
+| Method | Endpoint | Description         |
+| ------ | -------- | ------------------- |
+| GET    | `/`      | Server status check |
+
+---
+
+## ❌ 404 - Not Found
+
+| Method | Endpoint | Description                      |
+| ------ | -------- | -------------------------------- |
+| ALL    | `/*`     | Custom response for invalid URLs |

@@ -24,17 +24,22 @@ app.use("/", homeRouter)
 homeRouter.get("", (req: Request, res: Response) => {
     res.status(200).json({
         success: true,
-        message: "Server is running (with local db)!"
+        message: "Server is running!"
     })
 })
 
 
 // Custom JSON Response for 404 Endpoint
-app.all("/*", (req: Request, res: Response) => {
-    res.status(404).json({
-        success: false,
-        message: "Something Went Wrong!"
-    })
+app.all("/*", async (req: Request, res: Response) => {
+    try {
+        res.status(404).json({
+            success: false,
+            message: "Something Went Wrong!"
+        })
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+    }
 })
 
 export default app;
