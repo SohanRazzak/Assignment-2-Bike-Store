@@ -1,6 +1,6 @@
 # Assignment - 02 (Bike Store)
 
-### [Github](https://)
+### [Github](https://https://github.com/SohanRazzak/Assignment-2-Bike-Store)
 
 ### [Live Server](https://assignment-2-coral-two.vercel.app/)
 
@@ -12,6 +12,31 @@ This is a server application to manage a store which sales Bike. This applicatio
 
 - To manage products
 - To manage orders
+
+## 💻 Setting Up Locally
+
+- To set up this project locally first of all you need to clone this project using any suitable CLI.
+
+```
+git clone https://github.com/SohanRazzak/Assignment-2-Bike-Store.git
+```
+
+- Then you have to install all the depenedencies on your local maching. Use this command
+
+```
+npm i
+```
+
+- Now you need to create a file with name `.env` in the root directory. The file should contain two environment variable.
+
+```
+DATABASE_URL=YOUR_MONGODB_CONNECTION_STRING
+PORT=ANY_AVAILABLE_PORT
+```
+
+(Don't forget to change them with yours)
+
+- Now the porject is ready to run on your local machine.
 
 ## 🗄 Codebase Pattern
 
