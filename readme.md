@@ -38,18 +38,6 @@ PORT=ANY_AVAILABLE_PORT
 
 - Now the porject is ready to run on your local machine.
 
-## 🗄 Codebase Pattern
-
-This application uses a feature based modular pattern to manage codebase for scalibility and readability. It has total two module.
-Each module contains
-
-1. A Route file containing all the api endpoints for the module.
-2. A Controller file containing all the controller function needed.
-3. A Service file managing all service for controller functions.
-4. Interface and
-5. Model file (Separately) to safeguard type and manage mongoose model.
-6. Validator file, Additional layer of data validation on runtime with Zod.
-
 ## ⚙ Technology Used
 
 #### Dependencies
@@ -67,6 +55,18 @@ Each module contains
 - Eslint: For linting and fixing syntax
 - Prettier: For beautify codes and get more readability
 - And other type safety dev dependencies
+
+## 🗄 Codebase Pattern
+
+This application uses a feature based modular pattern to manage codebase for scalibility and readability. It has total two module.
+Each module contains
+
+1. A Route file containing all the api endpoints for the module.
+2. A Controller file containing all the controller function needed.
+3. A Service file managing all service for controller functions.
+4. Interface and
+5. Model file (Separately) to safeguard type and manage mongoose model.
+6. Validator file, Additional layer of data validation on runtime with Zod.
 
 ## 🚩 Routes
 
