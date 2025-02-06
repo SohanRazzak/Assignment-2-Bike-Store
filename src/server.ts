@@ -6,9 +6,14 @@ import app from './app';
 async function main() {
     try {
         await mongoose.connect(config.db_url as string);
+        // eslint-disable-next-line no-console
         console.log("Mongodb Connection Successful!");
-        app.listen(config.port, () => console.log(`Server is running on Port: ${config.port}`));
+        app.listen(config.port, () => {
+            // eslint-disable-next-line no-console
+            console.log(`Server is running on Port: ${config.port}`)
+        });
     } catch (error) {
+        // eslint-disable-next-line no-console
         console.log(error);
     }
 }
